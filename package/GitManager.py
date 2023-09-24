@@ -30,5 +30,7 @@ def get_repo_url(repo_path,access_token):
     
     if access_token != None:
         access_token += "@"
+    else:
+        access_token = ""
 
     return f'https://{access_token}{repo_path}'
