@@ -19,8 +19,8 @@
 Docker-git bridge is an application that allows you to build an image and run
 the related container starting from a git repository.
 
-Since git access keys and an exposed docker daemon are required,
-I strongly advise against using this application in production or on the cloud.
+Since a git access key and an exposed docker daemon are required,
+I strongly advise against using this application in production or on a cloud environment.
 
 
 ### Environment variable
