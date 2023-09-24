@@ -1,5 +1,6 @@
 # Docker-Git bridge
 
+```
                             ___....___
    ^^                __..-:'':__:..:__:'':-..__
                  _.-:__:.-:'':  :  :  :'':-.:__:-._
@@ -14,7 +15,7 @@
            [ ]                                        [ ]
            [ ]                                        [ ]
    ~~^_~^~/   \~^-~^~ _~^-~_^~-^~_^~~-^~_~^~-~_~-^~_^/   \~^ ~~_ ^
-
+```
 Docker-git bridge is an application that allows you to build an image and run
 the related container starting from a git repository.
 
