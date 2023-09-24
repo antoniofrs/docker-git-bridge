@@ -1,8 +1,8 @@
 # Docker-Git bridge
 
 ```
-                            ___....___
-   ^^                __..-:'':__:..:__:'':-..__
+                           ___....___
+ ^^                __..-:'':__:..:__:'':-..__
                  _.-:__:.-:'':  :  :  :'':-.:__:-._
                .':.-:  :  :  :  :  :  :  :  :  :._:'.
             _ :.':  :  :  :  :  :  :  :  :  :  :  :'.: _
@@ -44,7 +44,7 @@ I strongly advise against using this application in production or on a cloud env
       - DGB_GIT_PATH=github.com/antoniofrs/<repo-here>
       - DGB_GIT_BRANCH=main
       - DGB_DOCKER_FILE_NAME=Dockerfile
-      - DGB_DOCKER_HOST=123.123.123.123:2375
+      - DGB_DOCKER_HOST=tcp://123.123.123.123:2375
       - DGB_EXPOSED_PORTS=5000:5000
 ```
 
