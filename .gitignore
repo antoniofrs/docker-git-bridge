@@ -1,0 +1,4 @@
+app
+venv
+docker-compose.yml
+.vscode
