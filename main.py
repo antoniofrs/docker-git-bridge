@@ -5,6 +5,7 @@ import logging
 from package.DockerManger import DockerManager
 from package.GitManager import clone_repo
 from package.Validator import convert_mapped_ports, validate_config
+from package.model.GitConfig import GitConfig
 
 # Configure logger
 logging.basicConfig (
@@ -16,8 +17,9 @@ logging.basicConfig (
 # Get Config
 
 config = {
-    "access_token": os.getenv('DGB_GIT_TOKEN', None),
-    "repo_path": os.getenv("DGB_GIT_PATH"),
+    "git_password": os.getenv('DGB_GIT_PASSWORD', None),
+    "git_username": os.getenv('DGB_GIT_USERNAME', None),
+    "repo_url": os.getenv("DGB_GIT_REPO_URL"),
     "branch": os.getenv("DGB_GIT_BRANCH", "main"),
     "docker_host": os.getenv("DGB_DOCKER_HOST", "unix://var/run/docker.sock"),
     "docker_file_name": os.getenv("DGB_DOCKER_FILE_NAME", "Dockerfile"),
@@ -28,8 +30,14 @@ config = {
 validate_config(config)
 
 # Clone or pull repository
+gitConfig = GitConfig(
+    url= config["repo_url"],
+    username= config["git_username"],
+    password= config["git_password"],
+    branch= config["branch"]
+)
 
-clone_repo(config["access_token"], config["repo_path"], config["branch"])
+clone_repo(gitConfig)
 
 # Start docker container
 docker_manager = DockerManager(
